@@ -57,10 +57,3 @@ await env.DQUEUE.send({
     },
 });
 ```
-
-### Tail worker(note: Tail Workers is open beta)
-Add the following to your wrangler.toml
-
-```toml
-tail_consumers = [{service = "discordworker"}]
-```
