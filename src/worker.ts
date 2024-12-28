@@ -30,19 +30,6 @@ export default {
 					message.retry();
 					continue;
 				}
-				// const resp = await fetch(url, {
-				// 	method: "POST",
-				// 	headers: {
-				// 		Authorization: `Bot ${"aaa"}`,
-				// 		"Content-Type": "application/json",
-				// 	},
-				// 	body: JSON.stringify(messageBody),
-				// });
-				// if (resp.status !== 200) {
-				// 	console.error(`failed: ${await resp.text()}`);
-				// 	message.retry();
-				// 	continue;
-				// }
 			}
 			message.ack();
 		}
