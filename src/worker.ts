@@ -8,6 +8,10 @@ export default {
 		ctx: ExecutionContext,
 	): Promise<void> {
 		for (const message of batch.messages) {
+			console.info(`processing message id: ${message.id}`);
+			console.info(`message type: ${message.body.type}`);
+			console.info(`message attempts: ${message.attempts}`);
+
 			if (message.body.type === "send_message") {
 				const body = message.body;
 				const messageBody = body.message;
