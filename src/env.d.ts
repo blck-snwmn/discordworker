@@ -16,7 +16,7 @@ type UnknownMessage = {
 
 type SendMessage = {
 	type: "send_message";
-	channelId: string;
+	channelId?: string;
 	message: Record<string, string>;
 };
 
