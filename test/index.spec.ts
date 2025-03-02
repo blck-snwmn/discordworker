@@ -29,7 +29,7 @@ describe("test queue comsumer", () => {
 		fetchMock
 			.get("https://discord.com")
 			.intercept({
-				path: "/api/v10/channels/test_channel_id_cat/messages",
+				path: "/api/v10/channels/TEST_CHANNEL/messages",
 				method: "POST",
 				headers: {
 					Authorization: "Bot test_token_cat",
