@@ -19,7 +19,7 @@ export default {
 				const config = JSON.parse(env.DISCORD_CONFIG) as Config;
 				const token = config.CAT_BOT.TOKEN;
 				const channelId =
-					message.body.channelId !== ""
+					message.body.channelId !== undefined && message.body.channelId !== ""
 						? message.body.channelId
 						: config.CAT_BOT.CHANNEL_ID;
 
