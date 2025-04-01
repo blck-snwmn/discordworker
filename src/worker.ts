@@ -22,6 +22,12 @@ export default {
 						? message.body.channelId
 						: config.CAT_BOT.CHANNEL_ID;
 
+				if (channelId === undefined || channelId === "") {
+					console.error(`channelId is undefined or empty`);
+					message.retry();
+					continue;
+				}
+
 				const messageBody = body.message;
 				const url = `${baseURL}/channels/${channelId}/messages`;
 				console.info(`sending message to ${url}`);
