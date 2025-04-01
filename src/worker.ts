@@ -14,7 +14,6 @@ export default {
 
 			if (message.body.type === "send_message") {
 				const body = message.body;
-				const messageBody = body.message;
 
 				const config = JSON.parse(env.DISCORD_CONFIG) as Config;
 				const token = config.CAT_BOT.TOKEN;
@@ -23,6 +22,7 @@ export default {
 						? message.body.channelId
 						: config.CAT_BOT.CHANNEL_ID;
 
+				const messageBody = body.message;
 				const url = `${baseURL}/channels/${channelId}/messages`;
 				console.info(`sending message to ${url}`);
 				const resp = await fetch(url, {
