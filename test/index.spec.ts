@@ -36,7 +36,6 @@ describe("test queue comsumer", () => {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({
-					channel: "TEST_CHANNEL",
 					body: "Test",
 				}),
 			})
@@ -51,7 +50,6 @@ describe("test queue comsumer", () => {
 					type: "send_message",
 					channelId: "TEST_CHANNEL",
 					message: {
-						channel: "TEST_CHANNEL",
 						body: "Test",
 					},
 				},
@@ -80,7 +78,6 @@ describe("test queue comsumer", () => {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({
-					channel: "TEST_CHANNEL",
 					body: "Test",
 				}),
 			})
@@ -95,7 +92,6 @@ describe("test queue comsumer", () => {
 					type: "send_message",
 					channelId: "TEST_CHANNEL",
 					message: {
-						channel: "TEST_CHANNEL",
 						body: "Test",
 					},
 				},
@@ -127,7 +123,6 @@ describe("test queue comsumer", () => {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify({
-					channel: defaultChannelId,
 					body: "Test",
 				}),
 			})
@@ -142,7 +137,6 @@ describe("test queue comsumer", () => {
 					type: "send_message",
 					channelId: "",
 					message: {
-						channel: defaultChannelId,
 						body: "Test",
 					},
 				},
