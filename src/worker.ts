@@ -23,7 +23,7 @@ export default {
 						: config.CAT_BOT.CHANNEL_ID;
 
 				if (channelId === undefined || channelId === "") {
-					console.error(`channelId is undefined or empty`);
+					console.error("channelId is undefined or empty");
 					message.retry();
 					continue;
 				}
