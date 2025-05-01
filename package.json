@@ -8,10 +8,10 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
-		"@cloudflare/vitest-pool-workers": "^0.8.17",
-		"@cloudflare/workers-types": "^4.20250416.0",
+		"@cloudflare/vitest-pool-workers": "^0.8.23",
+		"@cloudflare/workers-types": "^4.20250430.0",
 		"typescript": "^5.8.3",
 		"vitest": "^2.1.9",
-		"wrangler": "^4.11.1"
+		"wrangler": "^4.13.2"
 	}
 }
