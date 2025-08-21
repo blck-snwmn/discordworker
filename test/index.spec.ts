@@ -1,16 +1,15 @@
-import { randomBytes } from "node:crypto";
 import {
 	createExecutionContext,
 	createMessageBatch,
 	env,
 	fetchMock,
 	getQueueResult,
-	waitOnExecutionContext,
 } from "cloudflare:test";
+import { randomBytes } from "node:crypto";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import worker from "../src/worker";
 
-const IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
+const _IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
 
 beforeAll(() => {
 	// Enable outbound request mocking...

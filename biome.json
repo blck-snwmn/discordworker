@@ -1,10 +1,8 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.3.3/schema.json",
-	"organizeImports": {
-		"enabled": true
-	},
+	"$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"linter": {
-		"ignore": ["node_modules/*", "*/.wrangler/*"],
+		"includes": ["**", "!**/node_modules/**/*", "!**/*/.wrangler/**/*"],
 		"enabled": true,
 		"rules": {
 			"recommended": true

@@ -5,7 +5,7 @@ export default {
 	async queue(
 		batch: MessageBatch<QueueMessage>,
 		env: Env,
-		ctx: ExecutionContext,
+		_ctx: ExecutionContext,
 	): Promise<void> {
 		for (const message of batch.messages) {
 			console.info(`processing message id: ${message.id}`);
