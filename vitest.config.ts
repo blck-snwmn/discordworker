@@ -20,7 +20,7 @@ export default defineWorkersConfig({
 					},
 				},
 				wrangler: {
-					configPath: "./wrangler.toml",
+					configPath: "./wrangler.jsonc",
 				},
 			},
 		},
