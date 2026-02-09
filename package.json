@@ -1,17 +1,23 @@
 {
-	"name": "discordworker",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"deploy": "wrangler deploy",
-		"start": "wrangler dev"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "2.3.2",
-		"@cloudflare/vitest-pool-workers": "0.10.7",
-		"@cloudflare/workers-types": "4.20251117.0",
-		"typescript": "5.9.3",
-		"vitest": "3.2.4",
-		"wrangler": "4.32.0"
-	}
+  "name": "discordworker",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "start": "wrangler dev",
+    "fmt": "oxfmt . --write",
+    "fmt:check": "oxfmt . --check",
+    "lint": "oxlint --type-aware --type-check --deny-warnings .",
+    "lint:fix": "oxlint --type-aware --type-check --deny-warnings . --fix"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "0.10.7",
+    "@cloudflare/workers-types": "4.20251117.0",
+    "oxfmt": "0.26.0",
+    "oxlint": "1.41.0",
+    "oxlint-tsgolint": "0.11.2",
+    "typescript": "5.9.3",
+    "vitest": "3.2.4",
+    "wrangler": "4.32.0"
+  }
 }
