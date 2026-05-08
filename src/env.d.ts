@@ -1,26 +1,26 @@
 type Config = {
-	DEFAULT: ConfigItem;
-	CAT_BOT: ConfigItem;
+  DEFAULT: ConfigItem;
+  CAT_BOT: ConfigItem;
 };
 
 type ConfigItem = {
-	TOKEN: string;
-	CHANNEL_ID: string;
+  TOKEN: string;
+  CHANNEL_ID: string;
 };
 
 type QueueMessage = UnknownMessage | SendMessage;
 
 type UnknownMessage = {
-	type: "unknown";
+  type: "unknown";
 };
 
 type SendMessage = {
-	type: "send_message";
-	channelId?: string;
-	message: Record<string, string>;
+  type: "send_message";
+  channelId?: string;
+  message: Record<string, string>;
 };
 
 interface Env {
-	DQUEUE: Queue<QueueMessage>;
-	DISCORD_CONFIG: string;
+  DQUEUE: Queue<QueueMessage>;
+  DISCORD_CONFIG: string;
 }
