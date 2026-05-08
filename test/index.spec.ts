@@ -5,7 +5,6 @@ import {
   fetchMock,
   getQueueResult,
 } from "cloudflare:test";
-import { randomBytes } from "node:crypto";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import worker from "../src/worker";
 
@@ -42,7 +41,7 @@ describe("test queue comsumer", () => {
 
     const messages: ServiceBindingQueueMessage<QueueMessage>[] = [
       {
-        id: randomBytes(16).toString("hex"),
+        id: crypto.randomUUID(),
         timestamp: new Date(1000),
         attempts: 0,
         body: {
@@ -84,7 +83,7 @@ describe("test queue comsumer", () => {
 
     const messages: ServiceBindingQueueMessage<QueueMessage>[] = [
       {
-        id: randomBytes(16).toString("hex"),
+        id: crypto.randomUUID(),
         timestamp: new Date(1000),
         attempts: 0,
         body: {
@@ -129,7 +128,7 @@ describe("test queue comsumer", () => {
 
     const messages: ServiceBindingQueueMessage<QueueMessage>[] = [
       {
-        id: randomBytes(16).toString("hex"),
+        id: crypto.randomUUID(),
         timestamp: new Date(1000),
         attempts: 0,
         body: {
@@ -175,7 +174,7 @@ describe("test queue comsumer", () => {
 
     const messages: ServiceBindingQueueMessage<QueueMessage>[] = [
       {
-        id: randomBytes(16).toString("hex"),
+        id: crypto.randomUUID(),
         timestamp: new Date(1000),
         attempts: 0,
         body: {
