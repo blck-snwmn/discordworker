@@ -2,6 +2,7 @@
 	"name": "discordworker",
 	"version": "0.0.0",
 	"private": true,
+	"packageManager": "pnpm@8",
 	"scripts": {
 		"deploy": "wrangler deploy",
 		"start": "wrangler dev",
