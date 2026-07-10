@@ -19,8 +19,3 @@ type SendMessage = {
   channelId?: string;
   message: Record<string, string>;
 };
-
-interface Env {
-  DQUEUE: Queue<QueueMessage>;
-  DISCORD_CONFIG: string;
-}
