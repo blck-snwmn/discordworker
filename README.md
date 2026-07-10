@@ -30,34 +30,6 @@ After you've added the secrets, deploy the Worker with the following command:
 wrangler deploy
 ```
 
-## Use
-### Send to queue from cf worker(note: Queues is open beta)
-Add the following to your wrangler.toml
-
-```toml
-[[queues.producers]]
-queue = "discordqueue"
-binding = "DQUEUE"
-```
-
-Add the following to your worker script
-
-```js
-export interface Env {
-	DQUEUE: Queue;
-}
-
-...
-
-await env.DQUEUE.send({
-    type: "send_message",
-    channelId: "your channelID",
-    message: {
-        content: "Hello, world!",
-    },
-});
-```
-
 ## Development
 
 CLI tools (`lefthook`) are managed by [aqua](https://aquaproj.github.io/) with versions pinned in [aqua.yaml](aqua.yaml).
