@@ -21,6 +21,5 @@ type SendMessage = {
 };
 
 interface Env {
-  DQUEUE: Queue<QueueMessage>;
   DISCORD_CONFIG: string;
 }

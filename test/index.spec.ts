@@ -4,6 +4,7 @@ import worker from "../src/worker";
 import { fetchMock } from "./fetch-mock";
 
 const _IncomingRequest = Request<unknown, IncomingRequestCfProperties>;
+type QueueTestMessage = Parameters<typeof createMessageBatch<QueueMessage>>[1][number];
 
 beforeAll(() => {
   fetchMock.activate();
@@ -31,7 +32,7 @@ describe("test queue comsumer", () => {
       })
       .reply(200);
 
-    const messages: ServiceBindingQueueMessage<QueueMessage>[] = [
+    const messages: QueueTestMessage[] = [
       {
         id: crypto.randomUUID(),
         timestamp: new Date(1000),
@@ -45,7 +46,7 @@ describe("test queue comsumer", () => {
         },
       },
     ];
-    const batch = createMessageBatch("queue", messages);
+    const batch = createMessageBatch<QueueMessage>("queue", messages);
     const ctx = createExecutionContext();
     await worker.queue(batch, env, ctx);
 
@@ -73,7 +74,7 @@ describe("test queue comsumer", () => {
       })
       .reply(400, "Bad Request");
 
-    const messages: ServiceBindingQueueMessage<QueueMessage>[] = [
+    const messages: QueueTestMessage[] = [
       {
         id: crypto.randomUUID(),
         timestamp: new Date(1000),
@@ -87,7 +88,7 @@ describe("test queue comsumer", () => {
         },
       },
     ];
-    const batch = createMessageBatch("queue", messages);
+    const batch = createMessageBatch<QueueMessage>("queue", messages);
     const ctx = createExecutionContext();
     await worker.queue(batch, env, ctx);
 
@@ -118,7 +119,7 @@ describe("test queue comsumer", () => {
       })
       .reply(200);
 
-    const messages: ServiceBindingQueueMessage<QueueMessage>[] = [
+    const messages: QueueTestMessage[] = [
       {
         id: crypto.randomUUID(),
         timestamp: new Date(1000),
@@ -132,7 +133,7 @@ describe("test queue comsumer", () => {
         },
       },
     ];
-    const batch = createMessageBatch("queue", messages);
+    const batch = createMessageBatch<QueueMessage>("queue", messages);
     const ctx = createExecutionContext();
 
     await worker.queue(batch, env, ctx);
@@ -164,7 +165,7 @@ describe("test queue comsumer", () => {
       })
       .reply(200);
 
-    const messages: ServiceBindingQueueMessage<QueueMessage>[] = [
+    const messages: QueueTestMessage[] = [
       {
         id: crypto.randomUUID(),
         timestamp: new Date(1000),
@@ -177,7 +178,7 @@ describe("test queue comsumer", () => {
         },
       },
     ];
-    const batch = createMessageBatch("queue", messages);
+    const batch = createMessageBatch<QueueMessage>("queue", messages);
     const ctx = createExecutionContext();
 
     await worker.queue(batch, env, ctx);
