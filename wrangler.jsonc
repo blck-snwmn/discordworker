@@ -14,12 +14,6 @@
 			{
 				"queue": "discordqueue"
 			}
-		],
-		"producers": [
-			{
-				"queue": "discordqueue",
-				"binding": "DQUEUE"
-			}
 		]
 	}
 }
