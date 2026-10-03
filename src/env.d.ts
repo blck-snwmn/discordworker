@@ -19,7 +19,3 @@ type SendMessage = {
   channelId?: string;
   message: Record<string, string>;
 };
-
-interface Env {
-  DISCORD_CONFIG: string;
-}

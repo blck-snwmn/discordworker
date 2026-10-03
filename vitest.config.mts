@@ -1,4 +1,4 @@
-import { cloudflareTest } from "@cloudflare/vitest-pool-workers";
+import { cloudflareTest } from "@cloudflare/vitest-plugin";
 import { defineConfig } from "vitest/config";
 
 export default defineConfig({
@@ -18,9 +18,7 @@ export default defineConfig({
 						'{"DEFAULT": {"TOKEN":"test_token", "CHANNEL_ID": "test_channel_id"}, "CAT_BOT": {"TOKEN":"test_token_cat", "CHANNEL_ID":"test_channel_id_cat"}}',
 				},
 			},
-			wrangler: {
-				configPath: "./wrangler.jsonc",
-			},
+			experimental: { newConfig: true },
 		}),
 	],
 	test: {

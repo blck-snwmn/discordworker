@@ -2,7 +2,11 @@ const version = "10";
 const baseURL = `https://discord.com/api/v${version}`;
 
 export default {
-  async queue(batch: MessageBatch<QueueMessage>, env: Env, _ctx: ExecutionContext): Promise<void> {
+  async queue(
+    batch: MessageBatch<QueueMessage>,
+    env: Cloudflare.Env,
+    _ctx: ExecutionContext,
+  ): Promise<void> {
     for (const message of batch.messages) {
       console.info(`processing message id: ${message.id}`);
       console.info(`message type: ${message.body.type}`);
@@ -44,4 +48,4 @@ export default {
       message.ack();
     }
   },
-} satisfies ExportedHandler<Env, QueueMessage>;
+} satisfies ExportedHandler<Cloudflare.Env, QueueMessage>;
